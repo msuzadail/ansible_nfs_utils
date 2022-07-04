@@ -3,7 +3,7 @@
   become: yes
   tasks:
 
-- name: Install NFS Client
-  ansible.windows.win_feature:
-    name: NFS-Client
-    state: present
+  - name: Install NFS Client
+    ansible.windows.win_feature:
+      name: NFS-Client
+      state: present
