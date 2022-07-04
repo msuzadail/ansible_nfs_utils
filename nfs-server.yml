@@ -9,7 +9,7 @@
       file:
         path: /reports
         state: directory
-        user: nobody
+        owner: nobody
         group: nobody
         mode: '0777'
         
