@@ -14,6 +14,7 @@
       service:
         name: "{{ item }}"
         enabled: yes
+        state: started
       with_items:
         - nfs-server
     - name: Copy exports file.
