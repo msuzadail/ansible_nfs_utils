@@ -15,9 +15,7 @@
         name: "{{ item }}"
         enabled: yes
       with_items:
-        - rpcbind
-        - nfslock
-        - nfs
+        - nfs-server
     - name: Copy exports file.
       template:
         src: ./files/exports.j2
@@ -26,4 +24,4 @@
         group: root
         mode: 0644
     - name: NFS apply change configrue
-      shell: systemctl reload nfs;exportfs -a
+      shell: systemctl reload nfs-server;exportfs -a
