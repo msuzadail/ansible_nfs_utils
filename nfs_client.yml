@@ -1,0 +1,14 @@
+---
+- hosts: nfs-clients
+  become: yes
+  tasks:
+    - name: install nfs-utils
+      yum: name=nfs-utils state=latest
+
+    - name: Create a mountable directory if it does not exist
+      file:
+        path: /mnt/nfs
+        state: directory
+        mode: '0775'
+    - name: Mount volume
+      shell: sudo mount node1:/reports /mnt/nfs
