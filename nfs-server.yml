@@ -9,8 +9,11 @@
       file:
         path: /reports
         state: directory
-        mode: '0775'
-    - name: enable rpcbind nfslock nfs
+        user: nobody
+        group: nobody
+        mode: '0777'
+        
+    - name: enable and start nfs-server
       service:
         name: "{{ item }}"
         enabled: yes
