@@ -11,6 +11,7 @@
     ansible.windows.win_feature:
       name: NFS-Client
       state: present
+      
   - name: create a mapped drive under Z
     community.windows.win_mapped_drive:
       letter: Z
