@@ -12,6 +12,6 @@
       name: NFS-Client
       state: present
   - name: create a mapped drive under Z
-    win_mapped_drive:
+    ansible.windows.win_mapped_drive:
       letter: Z
       path: \\10.0.1.75\reports
