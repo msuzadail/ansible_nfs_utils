@@ -7,12 +7,12 @@
     ansible_port: 5986
   tasks:
 
-  - name: Install NFS Client
-    ansible.windows.win_feature:
-      name: NFS-Client
-      state: present
+    - name: Install NFS Client
+      ansible.windows.win_feature:
+        name: NFS-Client
+        state: present
       
-  - name: create a mapped drive under Z
-    community.windows.win_mapped_drive:
-      letter: Z
-      path: \\10.0.1.75\reports
+    - name: create a mapped drive under Z
+      community.windows.win_mapped_drive:
+        letter: Z
+        path: \\10.0.1.75\reports
